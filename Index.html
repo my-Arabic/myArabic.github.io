@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شوي شوي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #F5F0E8;
+      --ink:     #1C1A16;
+      --sand:    #D9CDB8;
+      --olive:   #6B7A4E;
+      --terracotta: #B85C38;
+      --muted:   #7A7060;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HERO ── */
+    header {
+      padding: 80px 32px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .hero-arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(72px, 14vw, 140px);
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -1px;
+    }
+
+    .hero-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      margin: 0 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -6px;
+    }
+
+    .hero-transliteration {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .hero-description {
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      direction: ltr;
+      text-align: center;
+    }
+
+    /* ── NAV SECTIONS ── */
+    main {
+      flex: 1;
+      padding: 56px 32px;
+      max-width: 760px;
+      margin: 0 auto;
+      width: 100%;
+      direction: ltr;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card:hover {
+      border-color: var(--terracotta);
+      box-shadow: 0 2px 12px rgba(184,92,56,0.08);
+    }
+
+    .card-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: var(--terracotta);
+      line-height: 1;
+      direction: rtl;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      border-top: 1px solid var(--sand);
+      padding-top: 40px;
+    }
+
+    .about p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    .about p + p { margin-top: 12px; }
+
+    .about strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid var(--sand);
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    footer span {
+      font-family: 'Amiri', serif;
+      font-size: 15px;
+      color: var(--olive);
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 56px 20px 44px; }
+      main { padding: 40px 20px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero-arabic">شوي<span class="hero-dot"></span>شوي</div>
+    <div class="hero-transliteration">shway shway &nbsp;·&nbsp; little by little</div>
+    <p class="hero-description">
+      Not a textbook. Just honest notes — vocab, verbs, and grammar from someone figuring out Palestinian Arabic one lesson at a time.
+    </p>
+  </header>
+
+  <main>
+    <div class="section-label">Browse the notes</div>
+    <div class="cards">
+
+      <a class="card" href="vocab.html">
+        <div class="card-arabic">كلمات</div>
+        <div class="card-title">Vocabulary</div>
+        <div class="card-desc">Words and phrases collected along the way.</div>
+      </a>
+
+      <a class="card" href="grammar.html">
+        <div class="card-arabic">قواعد</div>
+        <div class="card-title">Grammar</div>
+        <div class="card-desc">Rules, patterns, and how things fit together.</div>
+      </a>
+
+      <a class="card" href="verbs.html">
+        <div class="card-arabic">أفعال</div>
+        <div class="card-title">Verbs</div>
+        <div class="card-desc">Conjugations, roots, and verb patterns.</div>
+      </a>
+
+    </div>
+
+    <div class="about">
+      <p>
+        These are personal study notes from the <strong>POLIS</strong> Palestinian Arabic program in Jerusalem. Nothing here is official or complete — just things I didn't want to forget.
+      </p>
+      <p>
+        Added to slowly, <strong>شوي شوي</strong>.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <span>يَلَّا نتقدَّم</span> &nbsp;·&nbsp; POLIS Palestinian Arabic
+  </footer>
+
+</body>
+</html>
